@@ -1,0 +1,47 @@
+<div>
+  <h1>EDUCATION</h1>
+
+    <div id="education-item">
+        <education-item></education-item>
+    </div>
+
+    <add-new-section-btn
+            ng-click="$ctrl.addSectionItem()"
+            type="$ctrl.type"
+    ></add-new-section-btn>
+
+    <div class="education-container" ng-repeat="school in $ctrl.userInfo.education">
+      <h4>Current information
+      <remove-btn
+              data="{schoolId: school.id}"
+              type="schoolItem"
+              ng-click="$ctrl.openModal()"
+      ></remove-btn>
+      </h4>
+      <hr>
+      <div class="row">
+          <div>
+              <b class="col-md-2">School name:</b>
+              <span class="col-md-10">{{school.name}}</span>
+          </div>
+      </div>
+
+      <div class="row">
+          <div>
+              <b class="col-md-2">Course name:</b>
+              <span class="col-md-10">{{school.course_name}}</span>
+          </div>
+      </div>
+
+      <div class="row">
+          <div>
+              <b class="col-md-2">Start date:</b>
+              <span class="col-md-3 pull-right">{{school.start_date | date: "MMMM, yyyy"}}</span>
+
+              <b class="col-md-2">End date:</b>
+              <span class="col-md-3">{{school.end_date | date: "MMMM, yyyy"}}</span>
+          </div>
+      </div>
+  </div>
+
+</div>

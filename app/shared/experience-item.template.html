@@ -1,0 +1,99 @@
+<div class="row job-position-container">
+    <h4>Add new job position
+        <save-button
+                ng-click="$ctrl.saveJobData(job)"
+        ></save-button>
+    </h4>
+    <hr>
+    <span style="display: none">
+        <input type="text" ng-model="job.user_id">
+    </span>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="jobTitle"
+                   class="col-md-2 control-label">
+                Job title
+            </label>
+            <div class="col-md-10">
+                <input type="text"
+                       id="jobTitle"
+                       ng-model="job.title"
+                       class="col-md-10">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="companyName"
+                   class="col-md-2 control-label">
+                Company name
+            </label>
+            <div class="col-md-10">
+                <input type="text"
+                       ng-model="job.companyName"
+                       id="companyName"
+                       class="col-md-10">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="jobStartDate"
+                   class="col-md-2 control-label">
+                Start date
+            </label>
+            <div class="col-md-3">
+                <input type="date"
+                       ng-model="job.start_date"
+                       id="jobStartDate"
+                       class="col-md-12">
+            </div>
+
+            <label for="jobEndDate"
+                   id="jobEndDateLabel"
+                   class="col-md-2 control-label">
+                End date
+            </label>
+            <div class="col-md-5">
+                <input type="date"
+                       ng-model="job.end_date"
+                       id="jobEndDate"
+                       class="col-md-8">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label class="col-md-2 control-label">
+                Responsibilities
+            </label>
+            <div class="col-md-10">
+                <ul ng-if="$ctrl.items.length > 0" style="padding-left: 0;">
+                    <li ng-repeat="item in $ctrl.items">
+                        <span class="col-md-9">
+                            {{item}}
+                        </span>
+                        <a class="col-md-3"
+                           ng-click="$ctrl.RemoveItem(item)">
+                            Remove
+                        </a>
+                    </li>
+                </ul>
+
+                <input class="col-md-9"
+                       type="text"
+                       ng-model="$ctrl.newItem">
+                <a ng-click="$ctrl.AddItem()"
+                   class="cursor-pointer col-md-3">
+                    Add new
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+

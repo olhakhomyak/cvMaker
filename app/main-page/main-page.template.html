@@ -1,0 +1,127 @@
+<div class="row main-container">
+  <div class="col-md-4 main-info">
+    <div class="center-content">
+      <!--<image-uploader></image-uploader>-->
+    </div>
+
+    <table class="col-md-12">
+      <tbody>
+      <tr class="mainUserInfo row">
+        <td ng-show="$ctrl.user.edit"
+            ng-bind="$ctrl.userInfo.name">
+        </td>
+        <td ng-show="!$ctrl.user.edit">
+          <input type="text"
+                 ng-model="$ctrl.userInfo.name"
+                 placeholder="{{$ctrl.userInfo.name}}"
+                 class="col-md-12">
+        </td>
+        <td class="pull-right">
+          <button ng-click="$ctrl.edit()"
+                  class="btn btn-primary btn-sm">
+            {{ !$ctrl.user.edit ? "Save" : "Edit" }}
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="opacity: 0">2</td>
+      </tr>
+
+      <tr class="mainUserInfo row">
+        <td ng-show="$ctrl.user.edit"
+            ng-bind="$ctrl.user.phone">
+        </td>
+        <td ng-show="!$ctrl.user.edit">
+          <input type="tel"
+                 ng-model="$ctrl.user.phone"
+                 placeholder="Phone"
+                 class="col-md-12"
+                 required>
+        </td>
+        <td class="pull-right">
+          <button ng-click="$ctrl.edit()"
+                  class="btn btn-primary btn-sm">
+            {{ !$ctrl.user.edit ? "Save" : "Edit" }}
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="opacity: 0">2</td>
+      </tr>
+
+      <tr class="mainUserInfo row">
+        <td ng-show="$ctrl.user.edit"
+            ng-bind="$ctrl.user.email">
+        </td>
+        <td ng-show="!$ctrl.user.edit">
+          <input type="text"
+                 ng-model="$ctrl.user.email"
+                 placeholder="Email"
+                 class="col-md-12"
+                 required>
+        </td>
+        <td class="pull-right">
+          <button ng-click="$ctrl.edit()"
+                  class="btn btn-primary btn-sm">
+            {{ !$ctrl.user.edit ? "Save" : "Edit" }}
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-8 main-info add-padding-left">
+    <div class="row">
+      <h3>RESUME <small>
+        <a ng-href="#!/resume">Edit</a>
+      </small></h3>
+      <div ng-if="!$ctrl.user.resume">No information</div>
+    </div>
+
+    <div class="row">
+      <h3>EDUCATION <small>
+        <a ng-href="#!/education">Edit</a>
+      </small>
+      </h3>
+      <hr>
+      <div ng-if="!$ctrl.userInfo.education">No information</div>
+      <div ng-if="$ctrl.userInfo.education">
+        <div ng-repeat="school in $ctrl.userInfo.education">
+          <p><b>School name:</b> {{school.school_name}}</p>
+          <p><b>Course:</b> {{school.course_name}}</p>
+          <p><b>Start date:</b> {{school.start_date | date: "MMMM, yyyy"}} <b>End date:</b> {{school.end_date | date:'MMMM, yyyy'}}</p>
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3>EXPERIENCE <small>
+        <a ng-href="#!/experience">Edit</a>
+      </small></h3>
+      <div ng-if="!$ctrl.userInfo.job_experience">No information</div>
+      <div ng-if="$ctrl.userInfo.job_experience">
+        <div ng-repeat="job in $ctrl.userInfo.job_experience">
+          <p><b>Job title:</b> {{job.job_title}}</p>
+          <p><b>Company name:</b> {{job.company_name}}</p>
+          <p><b>Start date:</b> {{job.start_date | date: "MMMM, yyyy"}} <b>End date:</b> {{job.end_date | date:'MMMM, yyyy'}}</p>
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3>SKILLS <small><a ng-href="#!/skills">Edit</a></small></h3>
+    </div>
+
+    <div class="row">
+      <h3>LANGUAGES <small><a ng-href="#!/resume">Edit</a></small></h3>
+    </div>
+
+  </div>
+</div>
+
+<new-section-popup></new-section-popup>
