@@ -13,6 +13,7 @@ function cvMaker($resource, API_URL) {
             id: 2
         },
         currentItem: {
+            type: null,
             school: {
                 id: null
             },
@@ -21,7 +22,6 @@ function cvMaker($resource, API_URL) {
             }
         }
     };
-
 
     function userData(params) {
         return $resource('', {}, {
@@ -38,7 +38,7 @@ function cvMaker($resource, API_URL) {
             removeSchool: {
                 method: 'DELETE',
                 params: {id: this.currentItem.school.id},
-                url: API_URL + "school/destroy"
+                url: API_URL + "school/destroy/:id"
             },
             saveJob: {
                 method: "POST",
@@ -48,7 +48,13 @@ function cvMaker($resource, API_URL) {
             removeJob: {
                 method: 'DELETE',
                 params: {id: this.currentItem.job.id},
-                url: API_URL + "job/destroy"}
+                url: API_URL + "job/destroy/:id"
+            },
+            savePersonalData: {
+                method: 'PUT',
+                params: {id: this.userAuth.id, params: params},
+                url: API_URL + "main/:id"
+            }
         });
     }
 }

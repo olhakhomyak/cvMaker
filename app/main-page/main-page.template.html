@@ -75,19 +75,20 @@
 
   <div class="col-md-8 main-info add-padding-left">
     <div class="row">
-      <h3>RESUME <small>
-        <a ng-href="#!/resume">Edit</a>
-      </small></h3>
+      <h3>RESUME
+        <small>
+          <a ng-href="#!/resume">Edit</a>
+        </small></h3>
       <div ng-if="!$ctrl.user.resume">No information</div>
     </div>
 
     <div class="row">
-      <h3>EDUCATION <small>
-        <a ng-href="#!/education">Edit</a>
-      </small>
+      <h3>EDUCATION
+        <small>
+          <a ng-href="#!/education">Edit</a>
+        </small>
       </h3>
-      <hr>
-      <div ng-if="!$ctrl.userInfo.education">No information</div>
+      <div ng-if="$ctrl.userInfo.education.length == 0">No information</div>
       <div ng-if="$ctrl.userInfo.education">
         <div ng-repeat="school in $ctrl.userInfo.education">
           <p><b>School name:</b> {{school.school_name}}</p>
@@ -99,10 +100,12 @@
     </div>
 
     <div class="row">
-      <h3>EXPERIENCE <small>
-        <a ng-href="#!/experience">Edit</a>
-      </small></h3>
-      <div ng-if="!$ctrl.userInfo.job_experience">No information</div>
+      <h3>EXPERIENCE
+        <small>
+          <a ng-href="#!/experience">Edit</a>
+        </small>
+      </h3>
+      <div ng-if="$ctrl.userInfo.job_experience.length == 0">No information</div>
       <div ng-if="$ctrl.userInfo.job_experience">
         <div ng-repeat="job in $ctrl.userInfo.job_experience">
           <p><b>Job title:</b> {{job.job_title}}</p>

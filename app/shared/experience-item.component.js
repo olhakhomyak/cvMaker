@@ -32,7 +32,7 @@ angular.module('experienceItem', [])
                     job.end_date = new Date(job.end_date).toISOString().slice(0, 19).replace('T', ' ');
                     console.log(job);
                     cvMaker.userData(JSON.stringify(job)).saveJob().$promise.then(function () {
-                        console.log('saved');
+                        console.log('job was saved');
 
                         $timeout(function(){
                             $window.location.reload();

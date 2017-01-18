@@ -14,9 +14,9 @@
                     $scope.buttonText = null;
 
                     switch ($ctrl.type) {
-                        case 'experience': $scope.buttonText = "Add company";
+                        case 'experience': $scope.buttonText = "Add one more company";
                             break;
-                        case 'education': $scope.buttonText = "Add school";
+                        case 'education': $scope.buttonText = "Add one more school";
                             break;
                     }
 

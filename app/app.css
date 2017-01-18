@@ -32,7 +32,7 @@ body {
   overflow-x: hidden;
 }
 
-.main-container {
+.main-container, .education-section, .experience-section, .resume-section {
   border: 1px solid #000;
   margin: 30px 100px;
   padding: 20px;

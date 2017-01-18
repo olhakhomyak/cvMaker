@@ -17,9 +17,11 @@
 
         switch ($ctrl.type) {
             case 'schoolItem':
+                cvMaker.currentItem.type = $ctrl.type;
                 cvMaker.currentItem.school.id = $ctrl.data.schoolId;
                 break;
             case 'jobItem':
+                cvMaker.currentItem.type = $ctrl.type;
                 cvMaker.currentItem.job.id = $ctrl.data.jobId;
                 break;
         }

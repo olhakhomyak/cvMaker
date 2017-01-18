@@ -16,7 +16,7 @@ angular.module('educationItem', [])
                     school.start_date = new Date(school.start_date).toISOString().slice(0, 19).replace('T', ' ');
                     school.end_date = new Date(school.end_date).toISOString().slice(0, 19).replace('T', ' ');
                     cvMaker.userData(school).saveSchool().$promise.then(function () {
-                        console.log('saved');
+                        console.log('school was saved');
 
                         $timeout(function(){
                             $window.location.reload();

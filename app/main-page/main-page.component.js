@@ -13,11 +13,9 @@ angular.module('mainPage').component('mainPage', {
                 $ctrl.user.edit = !$ctrl.user.edit;
             };
 
-
             $ctrl.addSection = function () {
                 $('#addSection').modal('show');
             };
-
 
             cvMaker.userData().get().$promise.then(function (response) {
                 $ctrl.userInfo = response.user;
