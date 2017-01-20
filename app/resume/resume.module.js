@@ -2,5 +2,6 @@
 
 angular.module('resume', [
     'ngRoute',
-    'main.cvMaker'
+    'main.cvMaker',
+    'resume.textField'
 ]);

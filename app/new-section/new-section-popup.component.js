@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('newSectionPopup', [])
+    angular.module('newSection.newSectionPopup', [])
         .component('newSectionPopup', {
             templateUrl: 'new-section/new-section-popup.template.html',
             controller: NewSectionController

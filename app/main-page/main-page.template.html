@@ -35,7 +35,7 @@
         <td ng-show="!$ctrl.user.edit">
           <input type="tel"
                  ng-model="$ctrl.user.phone"
-                 placeholder="Phone"
+                 placeholder="{{ $ctrl.constants.MAIN_PAGE.PHONE }}"
                  class="col-md-12"
                  required>
         </td>
@@ -58,14 +58,14 @@
         <td ng-show="!$ctrl.user.edit">
           <input type="text"
                  ng-model="$ctrl.user.email"
-                 placeholder="Email"
+                 placeholder="{{ $ctrl.constants.MAIN_PAGE.EMAIL }}"
                  class="col-md-12"
                  required>
         </td>
         <td class="pull-right">
           <button ng-click="$ctrl.edit()"
                   class="btn btn-primary btn-sm">
-            {{ !$ctrl.user.edit ? "Save" : "Edit" }}
+            {{ !$ctrl.user.edit ? $ctrl.constants.GENERAL.SAVE : $ctrl.constants.GENERAL.EDIT }}
           </button>
         </td>
       </tr>
@@ -75,11 +75,11 @@
 
   <div class="col-md-8 main-info add-padding-left">
     <div class="row">
-      <h3>RESUME
+      <h3>{{ $ctrl.constants.RESUME.RESUME }}
         <small>
-          <a ng-href="#!/resume">Edit</a>
+          <a ng-href="#!/resume">{{ $ctrl.constants.GENERAL.EDIT }}</a>
         </small></h3>
-      <div ng-if="!$ctrl.user.resume">No information</div>
+      <div ng-if="!$ctrl.user.resume"> {{ $ctrl.constants.GENERAL.NO_INFORMATION }}</div>
     </div>
 
     <div class="row">

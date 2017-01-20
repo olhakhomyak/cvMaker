@@ -10,7 +10,8 @@
           type="$ctrl.type"
   ></add-new-section-btn>
 
-  <div class="job-position-container" ng-repeat="job in $ctrl.userInfo.job_experience">
+  <div class="job-position-container"
+       ng-repeat="job in $ctrl.userInfo.job_experience">
     <h4>Current information
       <remove-btn
               data="{jobId: job.id}"
@@ -22,7 +23,7 @@
     <div class="row">
       <div>
         <b class="col-md-2">Job title:</b>
-        <span class="col-md-10">{{job.job_title}}</span>
+        <span class="col-md-10">{{ job.job_title }}</span>
       </div>
     </div>
 
