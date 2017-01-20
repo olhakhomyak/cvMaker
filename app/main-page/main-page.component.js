@@ -1,27 +1,30 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('mainPage').component('mainPage', {
-    templateUrl: 'main-page/main-page.template.html',
-    controller: ['$routeParams', 'cvMaker',
-        function MainPageController($routeParams, cvMaker) {
+    angular.module('mainPage')
+        .component('mainPage', {
+            templateUrl: 'main-page/main-page.template.html',
+            controller: MainPageController
+    });
 
-            var $ctrl = this;
+    function MainPageController(cvMaker) {
 
-            $ctrl.user = {};
+        var $ctrl = this;
 
-            $ctrl.edit = function () {
-                $ctrl.user.edit = !$ctrl.user.edit;
-            };
+        $ctrl.user = {};
 
-            $ctrl.addSection = function () {
-                $('#addSection').modal('show');
-            };
+        $ctrl.edit = function () {
+            $ctrl.user.edit = !$ctrl.user.edit;
+        };
 
-            cvMaker.userData().get().$promise.then(function (response) {
-                $ctrl.userInfo = response.user;
-                console.log($ctrl.userInfo);
-            });
+        $ctrl.addSection = function () {
+            $('#addSection').modal('show');
+        };
 
-        }
-    ]
-});
+        cvMaker.userData().get().$promise.then(function (response) {
+            $ctrl.userInfo = response.user;
+            // console.log($ctrl.userInfo);
+        });
+    }
+
+})();

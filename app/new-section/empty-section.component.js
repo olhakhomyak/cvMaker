@@ -1,15 +1,16 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.
-module('emptySection', []).
-component('emptySection', {
-    templateUrl: 'new-section/empty-section.template.html',
-    controller: EmptySectionController
-});
+    angular.module('emptySection', [])
+        .component('emptySection', {
+            templateUrl: 'new-section/empty-section.template.html',
+            controller: EmptySectionController
+        });
 
-function EmptySectionController($routeParams, cvMaker, $scope) {
+    function EmptySectionController($routeParams) {
 
-    var $ctrl = this;
+        var $ctrl = this;
 
-    $scope.sectionTitle = $routeParams.newSection;
-}
+        $ctrl.sectionTitle = $routeParams.newSection;
+    }
+})();

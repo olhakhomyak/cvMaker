@@ -1,19 +1,18 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.
-module('saveButton', []).
-component('saveButton', {
-    templateUrl: 'shared/save-button.template.html',
-    controller: ['$routeParams', 'cvMaker', '$timeout', '$window',
-        function SaveButtonController($routeParams, cvMaker, $timeout, $window) {
+    angular.module('saveButton', [])
+        .component('saveButton', {
+            templateUrl: 'shared/save-button.template.html',
+            controller: SaveButtonController
+        });
 
-            var $ctrl = this;
+    function SaveButtonController(cvMaker) {
 
-            cvMaker.userData().get().$promise.then(function (response) {
-                $ctrl.userInfo = response.user;
-            });
+        var $ctrl = this;
 
-
-        }
-    ]
-});
+        cvMaker.userData().get().$promise.then(function (response) {
+            $ctrl.userInfo = response.user;
+        });
+    }
+})();

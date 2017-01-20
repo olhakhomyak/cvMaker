@@ -1,16 +1,14 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('resume', []).component('userResume', {
-    templateUrl: 'resume/resume.template.html',
-    controller: UserExperienceController,
-    bindings: {
+    angular.module('resume', [])
+        .component('userResume', {
+            templateUrl: 'resume/resume.template.html',
+            controller: UserResumeController
+    });
+    
+    function UserResumeController() {
 
     }
 
-
-});
-
-function UserExperienceController($routeParams, cvMaker) {
-    var $ctrl = this;
-
-}
+})();
