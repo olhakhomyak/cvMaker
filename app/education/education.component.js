@@ -1,30 +1,44 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.
-  module('education').
-  component('userEducation', {
-    templateUrl: 'education/education.template.html',
-    controller: ['$scope', '$routeParams', 'cvMaker', '$compile',
-      function UserExperienceController($scope, $routeParams, cvMaker, $compile) {
+    angular.
+    module('education').
+    component('userEducation', {
+        templateUrl: 'education/education.template.html',
+        controller: ['$scope', '$routeParams', 'cvMaker', '$compile',
+            function UserExperienceController($scope, $routeParams, cvMaker, $compile, constants) {
 
-        var $ctrl = this;
+                var $ctrl = this;
 
-        $ctrl.type = 'education';
+                $ctrl.type = 'education';
+                $ctrl.constants = constants;
 
-        $ctrl.addSectionItem = function () {
-              var newSchool = angular.element("<education-item>");
-              $("#education-item").append(newSchool);
-              $compile(newSchool)($scope);
-        };
 
-          cvMaker.userData().get().$promise.then(function (response) {
-              $ctrl.userInfo = response.user;
-              console.log($ctrl.userInfo);
-          });
+                /**
+                 * add new form
+                 */
+                $ctrl.addSectionItem = function () {
+                    var newSchool = angular.element("<education-form>");
+                    $("#education-item").append(newSchool);
+                    $compile(newSchool)($scope);
+                };
 
-          $ctrl.openModal = function () {
-              $('#removeJob').modal('show');
-          }
-      }
-    ]
-  });
+
+                /**
+                 * get all user data
+                 */
+                cvMaker.userData().get().$promise.then(function (response) {
+                    $ctrl.userInfo = response.user;
+                });
+
+
+                /**
+                 * open modal window for removing selected content
+                 */
+                $ctrl.openModal = function () {
+                    $('#removeItem').modal('show');
+                }
+            }
+        ]
+    });
+})();

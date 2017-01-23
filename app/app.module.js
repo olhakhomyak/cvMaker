@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cvMakerApp', [
+var cvMaker = angular.module('cvMakerApp', [
     'ngAnimate',
     'ngRoute',
     'main',
@@ -8,12 +8,7 @@ angular.module('cvMakerApp', [
     'resume',
     'experience',
     'education',
-    'resumeTextfield',
-    'newNavigationLink',
-    'experienceItem',
-    'saveButton',
-    'addNewSectionBtn',
-    'educationItem',
-    'removeBtn',
-    'removePopup'
+    'shared',
+    'newSection',
+    'ui.bootstrap'
 ]);

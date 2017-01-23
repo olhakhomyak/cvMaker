@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('newNavigationLink', [])
+    angular.module('newSection')
         .component('newNavigationLink', {
             templateUrl: 'new-section/new-navigation-link.template.html',
             controller: newNavigationLinkController,

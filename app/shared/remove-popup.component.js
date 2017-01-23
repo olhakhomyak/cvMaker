@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('removePopup', [])
+    angular.module('shared')
         .component('removePopup', {
             templateUrl: 'shared/remove-popup.template.html',
             controller: RemovePopupController,
@@ -14,7 +14,7 @@
 
         var $ctrl = this;
 
-        $ctrl.removeJob = function () {
+        $ctrl.removeItem = function () {
             switch (cvMaker.currentItem.type) {
                 case 'schoolItem': {
                     cvMaker.userData().removeSchool().$promise.then(function () {
@@ -34,6 +34,15 @@
                     });
                 }
                     break;
+                case 'resumeAll': {
+                    cvMaker.userData().removeResume().$promise.then(function () {
+                        console.log('resume was removed');
+                        $timeout(function () {
+                            $window.location.reload();
+                        }, 1000);
+                    });
+                    break;
+                }
             }
             $('#removeJob').modal('hide');
 

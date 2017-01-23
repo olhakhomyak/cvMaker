@@ -1,7 +1,10 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('resume', [
-    'ngRoute',
-    'main.cvMaker',
-    'resume.textField'
-]);
+    angular
+        .module('resume', [
+            'ngRoute',
+            'main.cvMaker'
+        ]);
+})();
+

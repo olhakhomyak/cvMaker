@@ -14,7 +14,7 @@
         $ctrl.type = 'experience';
 
         $ctrl.addSectionItem = function () {
-            var newJob = angular.element("<experience-item>");
+            var newJob = angular.element("<experience-form>");
             $("#job-experience").append(newJob);
             $compile(newJob)($scope);
         };
@@ -22,9 +22,5 @@
         cvMaker.userData().get().$promise.then(function (response) {
             $ctrl.userInfo = response.user;
         });
-
-        $ctrl.openModal = function () {
-            $('#removeJob').modal('show');
-        };
     }
 })();

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('removeBtn', [])
+    angular.module('shared')
         .component('removeBtn', {
             templateUrl: 'shared/remove-button.template.html',
             bindings: {
@@ -23,6 +23,9 @@
             case 'jobItem':
                 cvMaker.currentItem.type = $ctrl.type;
                 cvMaker.currentItem.job.id = $ctrl.data.jobId;
+                break;
+            case 'resumeAll':
+                cvMaker.currentItem.type = $ctrl.type;
                 break;
         }
     }

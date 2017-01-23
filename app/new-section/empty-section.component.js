@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('newSection.emptySection', [])
+    angular.module('newSection')
         .component('emptySection', {
             templateUrl: 'new-section/empty-section.template.html',
             controller: EmptySectionController

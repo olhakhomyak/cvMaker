@@ -2,7 +2,7 @@
     "use strict";
 
     angular
-        .module("main.constants", [])
+        .module("main")
         .constant("constants", {
 
             'API_URL':              'http://localhost:8000/',

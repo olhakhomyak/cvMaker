@@ -1,48 +1,26 @@
 <div class="experience-section">
-  <h1>EXPERIENCE</h1>
 
-  <div id="job-experience">
-    <experience-item></experience-item>
+  <div>
+    <h1>EXPERIENCE</h1>
+    <hr>
+
+    <div id="job-experience">
+      <experience-form></experience-form>
+    </div>
+
+    <add-new-section-btn
+            ng-click="$ctrl.addSectionItem()"
+            type="$ctrl.type"
+    ></add-new-section-btn>
   </div>
 
-  <add-new-section-btn
-          ng-click="$ctrl.addSectionItem()"
-          type="$ctrl.type"
-  ></add-new-section-btn>
-
-  <div class="job-position-container"
-       ng-repeat="job in $ctrl.userInfo.job_experience">
-    <h4>Current information
-      <remove-btn
-              data="{jobId: job.id}"
-              type="jobItem"
-              ng-click="$ctrl.openModal()"
-      ></remove-btn>
-    </h4>
+  <div ng-if="$ctrl.userInfo.job_experience.length > 0">
+    <h4>Current information</h4>
     <hr>
-    <div class="row">
-      <div>
-        <b class="col-md-2">Job title:</b>
-        <span class="col-md-10">{{ job.job_title }}</span>
-      </div>
-    </div>
-
-    <div class="row">
-      <div>
-        <b class="col-md-2">Company name:</b>
-        <span class="col-md-10">{{job.company_name}}</span>
-      </div>
-    </div>
-
-    <div class="row">
-      <div>
-        <b class="col-md-2">Start date:</b>
-        <span class="col-md-4">{{job.start_date | date: "MMMM, yyyy"}}</span>
-
-        <b class="col-md-2">End date:</b>
-        <span class="col-md-3">{{job.end_date | date: "MMMM, yyyy"}}</span>
-      </div>
-    </div>
+    <experience-submitted
+            ng-repeat="job in $ctrl.userInfo.job_experience"
+            job="job"
+    ></experience-submitted>
   </div>
 
 </div>
