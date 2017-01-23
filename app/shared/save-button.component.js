@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('saveButton', [])
+    angular.module('shared')
         .component('saveButton', {
             templateUrl: 'shared/save-button.template.html',
             controller: SaveButtonController

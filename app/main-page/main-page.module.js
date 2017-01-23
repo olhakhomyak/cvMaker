@@ -1,3 +1,6 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('mainPage', ['main.cvMaker']);
+    angular.module('mainPage', ['main.cvMaker']);
+})();
+

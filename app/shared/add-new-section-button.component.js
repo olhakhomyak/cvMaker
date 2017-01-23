@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('addNewSectionBtn', [])
+    angular.module('shared')
         .component('addNewSectionBtn', {
             templateUrl: 'shared/add-new-section-button.template.html',
             bindings: {
@@ -24,7 +24,6 @@
                 $ctrl.buttonText = "Add one more school";
                 break;
         }
-
     }
 
 })();

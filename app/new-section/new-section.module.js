@@ -1,11 +1,8 @@
 (function () {
-    "use strict";
+  'use strict';
 
-    angular.module('newSection', [
-        'ngRoute',
-        'main.cvMaker',
-        'newSection.emptySection',
-        'newSection.newSectionPopup'
-    ]);
+  angular.module('newSection', [
+    'ngRoute',
+    'main.cvMaker'
+  ]);
 })();
-

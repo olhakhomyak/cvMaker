@@ -5,65 +5,64 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>CV builder</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
     <link rel="stylesheet" href="bower_components/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="app.css"/>
 </head>
 <body>
 
-<div class="view-container">
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a>Your profile</a>
+            </li>
+            <li>
+                <a is-active-nav ng-href="#!/main">Main</a>
+            </li>
+            <li>
+                <a is-active-nav ng-href="#!/resume">Resume</a>
+            </li>
+            <li>
+                <a is-active-nav ng-href="#!/education">Education</a>
+            </li>
+            <new-navigation-link
+                    ng-if="$ctrl.section"
+                    section="section"
+            ></new-navigation-link>
+            <li>
+                <a is-active-nav ng-href="#!/experience">Experience</a>
+            </li>
+            <li id="addNewSectionLink">
+                <a class="cursor-pointer"
+                   data-target="#addSection"
+                   is-active-nav
+                   data-toggle="modal">
+                    Add a new section +
+                </a>
+            </li>
+        </ul>
+        <button class="btn logout-btn">
+            <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+            Log out
+        </button>
+    </div>
 
-    <div id="wrapper">
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a>{{ $ctrl.constants.NAVIGATION.YOUR_PROFILE }}</a>
-                </li>
-                <li>
-                    <a ng-href="#!/main">Main</a>
-                </li>
-                <li>
-                    <a ng-href="#!/resume">Resume</a>
-                </li>
-                <li>
-                    <a ng-href="#!/education">Education</a>
-                </li>
-                <new-navigation-link
-                        ng-if="$ctrl.section"
-                        section="section"
-                ></new-navigation-link>
-                <li>
-                    <a ng-href="#!/experience">Experience</a>
-                </li>
-                <li id="addNewSectionLink">
-                    <a class="cursor-pointer"
-                       data-target="#addSection"
-                       data-toggle="modal">
-                        Add a new section +
-                    </a>
-                </li>
-            </ul>
-            <button class="btn logout-btn">
-                <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
-                Log out
-            </button>
-        </div>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
+                    <div ng-view></div>
 
-                        <div ng-view class="view-frame"></div>
-
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
     </div>
-
+    <!-- /#page-content-wrapper -->
 </div>
+
 
 <new-section-popup
     section="section"
@@ -81,24 +80,33 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <script src="app.module.js"></script>
 <script src="app.config.js"></script>
-<script src="main/constants.js"></script>
 <script src="main/main.js"></script>
+<script src="shared/shared.module.js"></script>
 <script src="main/cvMaker/cvMaker.module.js"></script>
 <script src="main/cvMaker/cvMaker.service.js"></script>
 <script src="main-page/main-page.module.js"></script>
 <script src="main-page/main-page.component.js"></script>
-<script src="resume/resume.module.js"></script>
+<script src="main/cvMaker/constants.js"></script>
+<script src="resume/resume.component.js"></script>
 <script src="resume/textField.component.js"></script>
 <script src="experience/experience.module.js"></script>
 <script src="experience/experience.component.js"></script>
+<script src="experience/experience-submitted.component.js"></script>
+<script src="new-section/new-section.module.js"></script>
+<script src="new-section/new-section-popup.component.js"></script>
 <script src="new-section/new-navigation-link.component.js"></script>
-<script src="shared/experience-item.component.js"></script>
+<script src="new-section/empty-section.component.js"></script>
+<script src="experience/experience-form.component.js"></script>
 <script src="shared/save-button.component.js"></script>
 <script src="shared/add-new-section-button.component.js"></script>
-<script src="education/education.module.js"></script>
-<script src="education/education.component.js"></script>
-<script src="shared/education-item.js"></script>
+<script src="shared/navigation-item-active.component.js"></script>
 <script src="shared/remove-button.component.js"></script>
 <script src="shared/remove-popup.component.js"></script>
+<script src="education/education.module.js"></script>
+<script src="education/education.component.js"></script>
+<script src="education/education-form.component.js"></script>
+<script src="education/education-submitted.component.js"></script>

@@ -1,6 +1,8 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('education', [
-  'ngRoute',
-  'main.cvMaker'
-]);
+    angular.module('education', [
+        'ngRoute',
+        'main.cvMaker'
+    ]);
+})();

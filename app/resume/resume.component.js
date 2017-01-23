@@ -6,9 +6,13 @@
             templateUrl: 'resume/resume.template.html',
             controller: UserResumeController
     });
-    
-    function UserResumeController() {
 
+    function UserResumeController() {
+        var $ctrl = this;
+
+        $ctrl.openModal = function () {
+            $('#removeItem').modal('show');
+        }
     }
 
 })();
