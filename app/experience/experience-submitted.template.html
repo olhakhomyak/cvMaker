@@ -1,0 +1,45 @@
+<div>
+    <remove-btn
+            data="{jobId: $ctrl.job.id}"
+            type="jobItem"
+            ng-click="$ctrl.openModal()"
+    ></remove-btn>
+
+    <div class="row">
+        <div>
+            <b class="col-md-3">
+                Job title:
+            </b>
+            <span class="col-md-9">
+                {{ $ctrl.job.job_title}}
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <b class="col-md-3">
+                Company name:
+            </b>
+            <span class="col-md-9">
+                {{ $ctrl.job.company_name}}
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <b class="col-md-3">
+            Start date:
+        </b>
+        <span class="col-md-3">
+            {{ $ctrl.job.start_date | date: "MMMM, yyyy" }}
+        </span>
+
+        <b class="col-md-2">
+            End date:
+        </b>
+        <span class="col-md-3">
+            {{ $ctrl.job.end_date | date: "MMMM, yyyy" }}
+        </span>
+    </div>
+</div>
