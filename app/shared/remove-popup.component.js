@@ -22,7 +22,7 @@
                         $timeout(function () {
                             $window.location.reload();
                         }, 1000);
-                    })
+                    });
                 }
                     break;
                 case 'jobItem': {
@@ -46,6 +46,6 @@
             }
             $('#removeJob').modal('hide');
 
-        }
+        };
     }
 })();

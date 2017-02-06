@@ -31,7 +31,7 @@
 
             $ctrl.section.name = '';
             $("#addSection").modal('hide');
-        }
+        };
     }
 
 })();

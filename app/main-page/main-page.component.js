@@ -23,6 +23,7 @@
 
         cvMaker.userData().get().$promise.then(function (response) {
             $ctrl.userInfo = response.user;
+            console.log($ctrl.userInfo);
         });
     }
 

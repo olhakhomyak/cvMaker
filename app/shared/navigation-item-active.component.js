@@ -5,10 +5,13 @@
         .directive('isActiveNav', [ '$location', function($location) {
         return {
             restrict: 'A',
-            link: function(scope, element) {
+            link: function(scope, element, attrs) {
                 scope.location = $location;
-                scope.$watch('location.path()', function(currentPath) {
-                    if('#!' + currentPath === element[0].attributes['href'].value) {
+                var path = attrs.href;
+                path = path.substring(1);
+                console.log(path);
+                scope.$watch('location.path()', function(newPath) {
+                    if(path === '!' + newPath) {
                         element.parent().addClass('active');
                     } else {
                         element.parent().removeClass('active');

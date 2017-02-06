@@ -12,7 +12,7 @@
 
         $ctrl.openModal = function () {
             $('#removeItem').modal('show');
-        }
+        };
     }
 
 })();
