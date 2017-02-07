@@ -3,7 +3,7 @@
 
     angular.module('newSection')
         .component('newSectionPopup', {
-            templateUrl: 'new-section/new-section-popup.template.html',
+            templateUrl: 'directives/new-section/new-section-popup.template.html',
             controller: NewSectionController
         });
 

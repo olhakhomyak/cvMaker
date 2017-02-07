@@ -4,7 +4,7 @@
     angular.
     module('education').
     component('userEducation', {
-        templateUrl: 'education/education.template.html',
+        templateUrl: 'directives/education/education.template.html',
         controller: ['$scope', '$routeParams', 'cvMaker', '$compile',
             function UserExperienceController($scope, $routeParams, cvMaker, $compile, constants) {
 

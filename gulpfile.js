@@ -18,14 +18,14 @@ gulp.task('lint', function() {
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return gulp.src('app/*.css')
+    return gulp.src('app/scss/main.scss')
         .pipe(sass())
         .pipe(gulp.dest('dist/css'));
 });
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src(['app/*/*.js'], ['app/*.js'])
+    return gulp.src(['app/directives/*/*.js'], ['app/*.js'])
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist'))
         .pipe(rename('all.min.js'))
@@ -36,7 +36,7 @@ gulp.task('scripts', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('app/*/*.js', ['lint', 'scripts']);
-    gulp.watch('app/*.css', ['sass']);
+    gulp.watch('app/scss/main.scss', ['sass']);
 });
 
 // Default Task

@@ -3,7 +3,7 @@
 
     angular.module('resume', [])
         .component('userResume', {
-            templateUrl: 'resume/resume.template.html',
+            templateUrl: 'directives/resume/resume.template.html',
             controller: UserResumeController
     });
 

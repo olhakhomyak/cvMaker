@@ -3,7 +3,7 @@
 
     angular.module('mainPage')
         .component('mainPage', {
-            templateUrl: 'main-page/main-page.template.html',
+            templateUrl: 'directives/main-page/main-page.template.html',
             controller: MainPageController
     });
 

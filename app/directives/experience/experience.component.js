@@ -3,7 +3,7 @@
 
     angular.module('experience')
         .component('userExperience', {
-            templateUrl: 'experience/experience.template.html',
+            templateUrl: 'directives/experience/experience.template.html',
             controller: UserExperienceController
         });
 

@@ -3,7 +3,7 @@
 
     angular.module('shared')
         .component('removeBtn', {
-            templateUrl: 'shared/remove-button.template.html',
+            templateUrl: 'directives/shared/remove-button.template.html',
             bindings: {
                 data: "=",
                 type: "@"

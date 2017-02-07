@@ -3,7 +3,7 @@
 
     angular.module('shared')
         .component('saveButton', {
-            templateUrl: 'shared/save-button.template.html',
+            templateUrl: 'directives/shared/save-button.template.html',
             controller: SaveButtonController
         });
 

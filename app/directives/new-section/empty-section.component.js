@@ -3,7 +3,7 @@
 
     angular.module('newSection')
         .component('emptySection', {
-            templateUrl: 'new-section/empty-section.template.html',
+            templateUrl: 'directives/new-section/empty-section.template.html',
             controller: EmptySectionController
         });
 

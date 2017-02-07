@@ -3,7 +3,7 @@
 
     angular.module('experience')
         .component('experienceSubmitted', {
-            templateUrl: 'experience/experience-submitted.template.html',
+            templateUrl: 'directives/experience/experience-submitted.template.html',
             bindings: {
                 job: '='
             },

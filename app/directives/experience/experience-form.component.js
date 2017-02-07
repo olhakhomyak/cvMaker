@@ -3,7 +3,7 @@
 
     angular.module('experience')
         .component('experienceForm', {
-            templateUrl: 'experience/experience-form.template.html',
+            templateUrl: 'directives/experience/experience-form.template.html',
             bindings: {
               job:'='
             },

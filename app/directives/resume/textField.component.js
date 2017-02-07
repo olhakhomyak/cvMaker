@@ -4,7 +4,7 @@
     angular
         .module('resume')
         .component('textField', {
-            templateUrl: 'resume/textField.template.html',
+            templateUrl: 'directives/resume/textField.template.html',
             controller: TextfieldController,
             bindings: {}
         });

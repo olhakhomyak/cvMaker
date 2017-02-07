@@ -9,7 +9,6 @@
                 scope.location = $location;
                 var path = attrs.href;
                 path = path.substring(1);
-                console.log(path);
                 scope.$watch('location.path()', function(newPath) {
                     if(path === '!' + newPath) {
                         element.parent().addClass('active');

@@ -3,7 +3,7 @@
 
     angular.module('education')
         .component('educationForm', {
-            templateUrl: 'education/education-form.template.html',
+            templateUrl: 'directives/education/education-form.template.html',
             controller: EducationFormController
         });
 

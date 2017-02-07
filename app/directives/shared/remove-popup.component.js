@@ -3,7 +3,7 @@
 
     angular.module('shared')
         .component('removePopup', {
-            templateUrl: 'shared/remove-popup.template.html',
+            templateUrl: 'directives/shared/remove-popup.template.html',
             controller: RemovePopupController,
             bindings: {
                 item: "="

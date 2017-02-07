@@ -3,7 +3,7 @@
 
     angular.module('shared')
         .component('addNewSectionBtn', {
-            templateUrl: 'shared/add-new-section-button.template.html',
+            templateUrl: 'directives/shared/add-new-section-button.template.html',
             bindings: {
                 type: "="
             },

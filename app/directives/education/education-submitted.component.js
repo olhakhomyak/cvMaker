@@ -3,7 +3,7 @@
 
     angular.module('education')
         .component('educationSubmitted', {
-            templateUrl: 'education/education-submitted.template.html',
+            templateUrl: 'directives/education/education-submitted.template.html',
             bindings: {
               school: '='
             },

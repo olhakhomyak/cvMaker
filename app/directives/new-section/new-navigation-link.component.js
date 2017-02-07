@@ -3,7 +3,7 @@
 
     angular.module('newSection')
         .component('newNavigationLink', {
-            templateUrl: 'new-section/new-navigation-link.template.html',
+            templateUrl: 'directives/new-section/new-navigation-link.template.html',
             controller: newNavigationLinkController,
             bindings: {
                 section: '='
