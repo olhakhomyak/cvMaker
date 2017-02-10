@@ -7,11 +7,13 @@
             controller: MainPageController
     });
 
-    function MainPageController(cvMaker) {
+    function MainPageController(cvMaker, constants) {
 
         var $ctrl = this;
 
         $ctrl.user = {};
+
+        $ctrl.constants = constants;
 
         $ctrl.edit = function () {
             $ctrl.user.edit = !$ctrl.user.edit;

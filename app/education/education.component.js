@@ -5,13 +5,15 @@
     module('education').
     component('userEducation', {
         templateUrl: 'education/education.template.html',
-        controller: ['$scope', '$routeParams', 'cvMaker', '$compile',
+        controller: ['$scope', '$routeParams', 'cvMaker', '$compile', 'constants',
             function UserExperienceController($scope, $routeParams, cvMaker, $compile, constants) {
 
                 var $ctrl = this;
 
                 $ctrl.type = 'education';
+
                 $ctrl.constants = constants;
+
 
 
                 /**

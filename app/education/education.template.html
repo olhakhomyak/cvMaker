@@ -1,6 +1,7 @@
 <div class="education-section">
     <div>
-        <h1>$ctrl.constants.EDUCATION.SCHOOL_NAME</h1>
+        <h1>{{ $ctrl.constants.EDUCATION.EDUCATION }}</h1>
+        <hr>
 
         <div id="education-item">
             <education-form></education-form>
@@ -14,7 +15,7 @@
 
     <div class="current-info-container"
         ng-if="$ctrl.userInfo.education.length > 0">
-        <h4>Current information</h4>
+        <h4>{{ $ctrl.constants.GENERAL.CURRENT_INFORMATION }}</h4>
         <hr>
         <education-submitted
                 ng-repeat="school in $ctrl.userInfo.education"

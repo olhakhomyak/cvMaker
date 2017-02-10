@@ -44,10 +44,19 @@
             },
 
             'EXPERIENCE': {
-                'JOB_TITLE':         'Job title',
-                'COMPANY_NAME':      'Company name',
+                'EXPERIENCE':       'Experience',
+                'JOB_TITLE':        'Job title',
+                'COMPANY_NAME':     'Company name',
                 'START_DATE':       'Start date',
                 'END_DATE':         'End date'
+            },
+
+            'SKILLS': {
+                'SKILLS': 'Skills'
+            },
+
+            'LANGUAGES': {
+                'LANGUAGES': 'Languages'
             }
         })
 })();

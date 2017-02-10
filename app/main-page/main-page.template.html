@@ -13,13 +13,13 @@
           <td ng-show="!$ctrl.user.edit">
             <input type="text"
                    ng-model="$ctrl.userInfo.name"
-                   placeholder="{{$ctrl.userInfo.name}}"
+                   placeholder="{{ $ctrl.userInfo.name }}"
                    class="col-md-12">
           </td>
           <td class="pull-right">
             <button ng-click="$ctrl.edit()"
                     class="btn btn-primary btn-sm">
-              {{ !$ctrl.user.edit ? "Save" : "Edit" }}
+              {{ !$ctrl.user.edit ? $ctrl.constants.GENERAL.SAVE : $ctrl.constants.GENERAL.EDIT }}
             </button>
           </td>
         </tr>
@@ -35,14 +35,14 @@
         <td ng-show="!$ctrl.user.edit">
           <input type="tel"
                  ng-model="$ctrl.user.phone"
-                 placeholder="Phone"
+                 placeholder="{{ $ctrl.constants.MAIN_PAGE.PHONE }}"
                  class="col-md-12"
                  required>
         </td>
         <td class="pull-right">
           <button ng-click="$ctrl.edit()"
                   class="btn btn-primary btn-sm">
-            {{ !$ctrl.user.edit ? "Save" : "Edit" }}
+            {{ !$ctrl.user.edit ? $ctrl.constants.GENERAL.SAVE : $ctrl.constants.GENERAL.EDIT }}
           </button>
         </td>
       </tr>
@@ -65,7 +65,7 @@
         <td class="pull-right">
           <button ng-click="$ctrl.edit()"
                   class="btn btn-primary btn-sm">
-            {{ !$ctrl.user.edit ? "Save" : "Edit" }}
+            {{ !$ctrl.user.edit ? $ctrl.constants.GENERAL.SAVE : $ctrl.constants.GENERAL.EDIT }}
           </button>
         </td>
       </tr>
@@ -76,21 +76,29 @@
 
   <div class="col-md-8 main-info add-padding-left">
     <div class="row">
-      <h3>RESUME
-        <small>
-          <a ng-href="#!/resume">Edit</a>
-        </small></h3>
-      <div ng-if="!$ctrl.userInfo.resume">No information</div>
-      <div ng-if="$ctrl.userInfo.resume">{{$ctrl.userInfo.resume}}</div>
+      <h3>{{ $ctrl.constants.RESUME.RESUME | uppercase }}
+        <small><a ng-href="#!/resume">{{ $ctrl.constants.GENERAL.EDIT }} <i class="fa fa-pencil" aria-hidden="true"></i></a></small>
+      </h3>
+      <div ng-if="!$ctrl.userInfo.resume">
+        {{ $ctrl.constants.GENERAL.NO_INFORMATION }}
+      </div>
+      <div ng-if="$ctrl.userInfo.resume">
+        {{$ctrl.userInfo.resume}}
+      </div>
+
     </div>
 
     <div class="row">
-      <h3>EDUCATION
+      <h3>{{ $ctrl.constants.EDUCATION.EDUCATION | uppercase }}
         <small>
-          <a ng-href="#!/education">Edit</a>
+          <a ng-href="#!/education">{{ $ctrl.constants.GENERAL.EDIT }} <i class="fa fa-pencil" aria-hidden="true"></i></a>
         </small>
       </h3>
-      <div ng-if="$ctrl.userInfo.education.length == 0">No information</div>
+
+      <div ng-if="$ctrl.userInfo.education.length == 0">
+        {{ $ctrl.constants.GENERAL.NO_INFORMATION }}
+      </div>
+
       <education-submitted
               ng-repeat="school in $ctrl.userInfo.education"
               school="school"
@@ -100,28 +108,32 @@
     </div>
 
     <div class="row">
-      <h3>EXPERIENCE
+      <h3>{{ $ctrl.constants.EXPERIENCE.EXPERIENCE | uppercase}}
         <small>
-          <a ng-href="#!/experience">Edit</a>
+          <a ng-href="#!/experience">{{ $ctrl.constants.GENERAL.EDIT }} <i class="fa fa-pencil" aria-hidden="true"></i></a>
         </small>
       </h3>
-      <div ng-if="$ctrl.userInfo.job_experience.length == 0">No information</div>
-      <div ng-if="$ctrl.userInfo.job_experience">
-        <div ng-repeat="job in $ctrl.userInfo.job_experience">
-          <p><b>Job title:</b> {{job.job_title}}</p>
-          <p><b>Company name:</b> {{job.company_name}}</p>
-          <p><b>Start date:</b> {{job.start_date | date: "MMMM, yyyy"}} <b>End date:</b> {{job.end_date | date:'MMMM, yyyy'}}</p>
-          <hr>
-        </div>
+
+      <div ng-if="$ctrl.userInfo.job_experience.length == 0">
+        {{ $ctrl.constants.GENERAL.NO_INFORMATION }}
       </div>
+
+      <experience-submitted
+        ng-repeat="job in $ctrl.userInfo.job_experience"
+        job="job"
+        ng-if="$ctrl.userInfo.job_experience.length != 0"
+        class="main-container"
+      ></experience-submitted>
     </div>
 
     <div class="row">
-      <h3>SKILLS <small><a ng-href="#!/skills">Edit</a></small></h3>
+      <h3>{{ $ctrl.constants.SKILLS.SKILLS | uppercase }}
+        <small><a ng-href="#!/skills">{{ $ctrl.constants.GENERAL.EDIT }} <i class="fa fa-pencil" aria-hidden="true"></i></a></small></h3>
     </div>
 
     <div class="row">
-      <h3>LANGUAGES <small><a ng-href="#!/resume">Edit</a></small></h3>
+      <h3>{{ $ctrl.constants.LANGUAGES.LANGUAGES | uppercase }}
+        <small><a ng-href="#!/resume">{{ $ctrl.constants.GENERAL.EDIT }} <i class="fa fa-pencil" aria-hidden="true"></i></a></small></h3>
     </div>
 
   </div>
