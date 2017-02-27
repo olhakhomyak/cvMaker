@@ -1,0 +1,36 @@
+<div class="submitted-container">
+    <div class="row">
+
+        <span class="col-md-10"><b>
+                {{ $ctrl.converted_start_date | date: "MMM yyyy" | uppercase}} - {{ $ctrl.converted_end_date | date: "MMM yyyy" | uppercase }}
+        </b>
+        </span>
+
+        <remove-btn
+                data="{schoolId: $ctrl.school.id}"
+                type="schoolItem"
+                class="col-md-2"
+                ng-click="$ctrl.openModal()"
+        ></remove-btn>
+
+    </div>
+    <div class="row">
+        <b class="col-md-3">
+            {{ $ctrl.constants.EDUCATION.SCHOOL_NAME }}
+        </b>
+        <span class="col-md-7">
+            {{ $ctrl.school.school_name }}
+        </span>
+    </div>
+
+    <div class="row">
+        <div>
+            <b class="col-md-3">
+                {{ $ctrl.constants.EDUCATION.COURSE }}
+            </b>
+            <span class="col-md-7">
+                {{ $ctrl.school.course_name }}
+            </span>
+        </div>
+    </div>
+</div>

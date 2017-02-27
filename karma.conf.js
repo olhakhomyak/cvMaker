@@ -2,10 +2,10 @@
 module.exports = function(config) {
   config.set({
 
-    basePath: './app',
+    basePath: 'src/app',
 
     files: [
-      'bower_components/angular/angular.js',
+      'src/app/bower_components/angular/angular.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-route/angular-route.js',

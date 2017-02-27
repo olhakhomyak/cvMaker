@@ -1,0 +1,26 @@
+<div class="experience-section">
+
+  <div>
+    <h1>EXPERIENCE</h1>
+    <hr>
+
+    <div id="job-experience">
+      <experience-form></experience-form>
+    </div>
+
+    <add-new-section-btn
+            ng-click="$ctrl.addSectionItem()"
+            type="$ctrl.type"
+    ></add-new-section-btn>
+  </div>
+
+  <div ng-if="$ctrl.userInfo.job_experience.length > 0">
+    <h4>Current information</h4>
+    <hr>
+    <experience-submitted
+            ng-repeat="job in $ctrl.userInfo.job_experience"
+            job="job"
+    ></experience-submitted>
+  </div>
+
+</div>

@@ -1,0 +1,92 @@
+<div class="row education-container">
+    <h4>Add school
+        <save-button
+                class="col-md-3 pull-right"
+                ng-click="$ctrl.saveSchoolData(school)"
+        ></save-button>
+    </h4>
+    <hr>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="schoolName"
+                   class="col-md-2 control-label">
+                School
+            </label>
+            <div class="col-md-10">
+                <input type="text"
+                       ng-model="school.name"
+                       id="schoolName"
+                       class="col-md-10">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="courseName"
+                   class="col-md-2 control-label">
+                Course name
+            </label>
+            <div class="col-md-10">
+                <input type="text"
+                       ng-model="school.course_name"
+                       id="courseName"
+                       class="col-md-10">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="schoolStartDate"
+                   class="col-md-2 control-label">
+                Start date
+            </label>
+            <div class="col-md-4">
+                <input type="text"
+                       class="col-md-9"
+                       id="schoolStartDate"
+                       uib-datepicker-popup="{{dateFormat}}"
+                       ng-model="school.start_date"
+                       is-open="status.openedStartDate"
+                       ng-click="openStartDate($event)"
+                       datepicker-options="dateOptions"
+                       date-disabled="disabled(date, mode)"
+                       ng-required="true"
+                       close-text="Close" />
+                <span   ng-click="openStartDate($event)"
+                        class="col-md-2">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="schoolEndDate"
+                   class="col-md-2 control-label">
+                End date
+            </label>
+            <div class="col-md-4">
+                <input type="text"
+                       class="col-md-9"
+                       id="schoolEndDate"
+                       uib-datepicker-popup="{{dateFormat}}"
+                       ng-model="school.end_date"
+                       is-open="status.openedEndDate"
+                       ng-click="openEndDate($event)"
+                       datepicker-options="dateOptions"
+                       date-disabled="disabled(date, mode)"
+                       ng-required="true"
+                       close-text="Close" />
+                <span   ng-click="openEndDate($event)"
+                        class="col-md-2">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>

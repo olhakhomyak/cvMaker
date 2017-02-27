@@ -1,0 +1,26 @@
+<div class="education-section">
+    <div>
+        <h1>{{ $ctrl.constants.EDUCATION.EDUCATION }}</h1>
+        <hr>
+
+        <div id="education-item">
+            <education-form></education-form>
+        </div>
+
+        <add-new-section-btn
+                ng-click="$ctrl.addSectionItem()"
+                type="$ctrl.type"
+        ></add-new-section-btn>
+    </div>
+
+    <div class="current-info-container"
+        ng-if="$ctrl.userInfo.education.length > 0">
+        <h4>{{ $ctrl.constants.GENERAL.CURRENT_INFORMATION }}</h4>
+        <hr>
+        <education-submitted
+                ng-repeat="school in $ctrl.userInfo.education"
+                school="school"
+                class="edit-container"
+        ></education-submitted>
+    </div>
+</div>

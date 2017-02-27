@@ -1,0 +1,142 @@
+<div class="row main-container">
+  <div class="col-md-4 main-info">
+    <div class="center-content">
+      <!--<image-uploader></image-uploader>-->
+    </div>
+
+    <table class="col-md-12">
+      <tbody>
+        <tr class="mainUserInfo row">
+          <td ng-show="$ctrl.user.edit"
+              ng-bind="$ctrl.userInfo.name">
+          </td>
+          <td ng-show="!$ctrl.user.edit">
+            <input type="text"
+                   ng-model="$ctrl.userInfo.name"
+                   placeholder="{{ $ctrl.userInfo.name }}"
+                   class="col-md-12">
+          </td>
+          <td class="pull-right">
+            <button ng-click="$ctrl.edit()"
+                    class="btn btn-primary btn-sm">
+              {{ !$ctrl.user.edit ? $ctrl.constants.GENERAL.SAVE : $ctrl.constants.GENERAL.EDIT }}
+            </button>
+          </td>
+        </tr>
+
+      <tr>
+        <td style="opacity: 0">2</td>
+      </tr>
+
+      <tr class="mainUserInfo row">
+        <td ng-show="$ctrl.user.edit"
+            ng-bind="$ctrl.user.phone">
+        </td>
+        <td ng-show="!$ctrl.user.edit">
+          <input type="tel"
+                 ng-model="$ctrl.user.phone"
+                 placeholder="{{ $ctrl.constants.MAIN_PAGE.PHONE }}"
+                 class="col-md-12"
+                 required>
+        </td>
+        <td class="pull-right">
+          <button ng-click="$ctrl.edit()"
+                  class="btn btn-primary btn-sm">
+            {{ !$ctrl.user.edit ? $ctrl.constants.GENERAL.SAVE : $ctrl.constants.GENERAL.EDIT }}
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="opacity: 0">2</td>
+      </tr>
+
+      <tr class="mainUserInfo row">
+        <td ng-show="$ctrl.user.edit"
+            ng-bind="$ctrl.user.email">
+        </td>
+        <td ng-show="!$ctrl.user.edit">
+          <input type="text"
+                 ng-model="$ctrl.user.email"
+                 placeholder="Email"
+                 class="col-md-12"
+                 required>
+        </td>
+        <td class="pull-right">
+          <button ng-click="$ctrl.edit()"
+                  class="btn btn-primary btn-sm">
+            {{ !$ctrl.user.edit ? $ctrl.constants.GENERAL.SAVE : $ctrl.constants.GENERAL.EDIT }}
+          </button>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-8 main-info add-padding-left">
+    <div class="row">
+      <h3>{{ $ctrl.constants.RESUME.RESUME | uppercase }}
+        <small><a ng-href="#!/resume">{{ $ctrl.constants.GENERAL.EDIT }} <i class="fa fa-pencil" aria-hidden="true"></i></a></small>
+      </h3>
+      <div ng-if="!$ctrl.userInfo.resume">
+        {{ $ctrl.constants.GENERAL.NO_INFORMATION }}
+      </div>
+      <div ng-if="$ctrl.userInfo.resume">
+        {{$ctrl.userInfo.resume}}
+      </div>
+
+    </div>
+
+    <div class="row">
+      <h3>{{ $ctrl.constants.EDUCATION.EDUCATION | uppercase }}
+        <small>
+          <a ng-href="#!/education">{{ $ctrl.constants.GENERAL.EDIT }} <i class="fa fa-pencil" aria-hidden="true"></i></a>
+        </small>
+      </h3>
+
+      <div ng-if="$ctrl.userInfo.education.length == 0">
+        {{ $ctrl.constants.GENERAL.NO_INFORMATION }}
+      </div>
+
+      <education-submitted
+              ng-repeat="school in $ctrl.userInfo.education"
+              school="school"
+              ng-if="$ctrl.userInfo.education.length != 0"
+              class="main-container"
+      ></education-submitted>
+    </div>
+
+    <div class="row">
+      <h3>{{ $ctrl.constants.EXPERIENCE.EXPERIENCE | uppercase}}
+        <small>
+          <a ng-href="#!/experience">{{ $ctrl.constants.GENERAL.EDIT }} <i class="fa fa-pencil" aria-hidden="true"></i></a>
+        </small>
+      </h3>
+
+      <div ng-if="$ctrl.userInfo.job_experience.length == 0">
+        {{ $ctrl.constants.GENERAL.NO_INFORMATION }}
+      </div>
+
+      <experience-submitted
+        ng-repeat="job in $ctrl.userInfo.job_experience"
+        job="job"
+        ng-if="$ctrl.userInfo.job_experience.length != 0"
+        class="main-container"
+      ></experience-submitted>
+    </div>
+
+    <div class="row">
+      <h3>{{ $ctrl.constants.SKILLS.SKILLS | uppercase }}
+        <small><a ng-href="#!/skills">{{ $ctrl.constants.GENERAL.EDIT }} <i class="fa fa-pencil" aria-hidden="true"></i></a></small></h3>
+    </div>
+
+    <div class="row">
+      <h3>{{ $ctrl.constants.LANGUAGES.LANGUAGES | uppercase }}
+        <small><a ng-href="#!/resume">{{ $ctrl.constants.GENERAL.EDIT }} <i class="fa fa-pencil" aria-hidden="true"></i></a></small></h3>
+    </div>
+
+  </div>
+</div>
+
+<new-section-popup></new-section-popup>

@@ -1,0 +1,122 @@
+<div class="row job-position-container">
+    <h4>Add new job position
+        <save-button
+                class="col-md-3 pull-right"
+                ng-click="$ctrl.saveJobData(job)"
+        ></save-button>
+    </h4>
+    <hr>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="jobTitle"
+                   class="col-md-3 control-label">
+                Job title
+            </label>
+            <div class="col-md-9">
+                <input type="text"
+                       id="jobTitle"
+                       ng-model="job.title"
+                       class="col-md-9">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="companyName"
+                   class="col-md-3 control-label">
+                Company name
+            </label>
+            <div class="col-md-9">
+                <input type="text"
+                       ng-model="job.companyName"
+                       id="companyName"
+                       class="col-md-9">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="jobStartDate"
+                   class="col-md-3 control-label">
+                Start date
+            </label>
+            <div class="col-md-4">
+                <input type="text"
+                       class="col-md-9"
+                       id="jobStartDate"
+                       uib-datepicker-popup="{{dateFormat}}"
+                       ng-model="job.start_date"
+                       is-open="status.openedStartDate"
+                       ng-click="openStartDate($event)"
+                       datepicker-options="dateOptions"
+                       date-disabled="disabled(date, mode)"
+                       ng-required="true"
+                       close-text="Close" />
+                <span   ng-click="openStartDate($event)"
+                        class="col-md-2">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label for="jobEndDate"
+                   id="jobEndDateLabel"
+                   class="col-md-3 control-label">
+                End date
+            </label>
+            <div class="col-md-4">
+                <input type="text"
+                       class="col-md-9"
+                       id="jobEndDate"
+                       uib-datepicker-popup="{{dateFormat}}"
+                       ng-model="job.end_date"
+                       is-open="status.openedEndDate"
+                       ng-click="openEndDate($event)"
+                       datepicker-options="dateOptions"
+                       date-disabled="disabled(date, mode)"
+                       ng-required="true"
+                       close-text="Close" />
+                <span   ng-click="openEndDate($event)"
+                        class="col-md-2">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                Responsibilities
+            </label>
+            <div class="col-md-9">
+                <ul ng-if="$ctrl.items.length > 0" style="padding-left: 0;">
+                    <li ng-repeat="item in $ctrl.items">
+                        <span class="col-md-9">
+                            {{item}}
+                        </span>
+                        <a class="col-md-3"
+                           ng-click="$ctrl.RemoveItem(item)">
+                            Remove
+                        </a>
+                    </li>
+                </ul>
+
+                <input class="col-md-9"
+                       type="text"
+                       ng-model="$ctrl.newItem">
+                <a ng-click="$ctrl.AddItem()"
+                   class="cursor-pointer col-md-3">
+                    Add new
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
